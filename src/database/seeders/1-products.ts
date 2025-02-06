@@ -12,7 +12,7 @@ export default {
         },
         {
           sku: '43N23P',
-          name: 'Mac Pro',
+          name: 'MacBook Pro',
           price: 5399.99,
         },
         {
@@ -22,7 +22,7 @@ export default {
         },
         {
           sku: '344222',
-          name: 'Raspberry Pi',
+          name: 'Raspberry Pi B',
           price: 30.0,
         },
       ],

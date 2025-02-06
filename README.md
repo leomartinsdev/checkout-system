@@ -1,75 +1,42 @@
-# README.md
+# Checkout API
 
-# Express API Project
+A Node.js/Express API that implements a checkout system with special pricing rules and product management.
 
-This project is a Node.js API built using Express. It serves as a backend service that can be connected to a database. The project is structured to facilitate easy development and testing.
+## Features
 
-## Project Structure
+- Product management with MySQL database
+- Special pricing rules:
+  - Buy 3 Google Homes for the price of 2
+  - Free Raspberry Pi B with every MacBook Pro purchase
+  - 10% discount on Alexa Speakers when buying 3 or more
+- RESTful API endpoints
+- Docker containerization
+- TypeScript implementation
 
-```
-express-api
-├── src
-│   ├── controllers
-│   ├── models
-│   ├── routes
-│   ├── middleware
-│   ├── config
-│   └── app.ts
-├── tests
-├── docker
-├── .env
-├── .gitignore
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-## Getting Started
-
-### Prerequisites
+## Tech Stack
 
 - Node.js
-- npm
-- Docker (for containerization)
+- Express
+- TypeScript
+- MySQL
+- Sequelize ORM
+- Docker
+- Jest (Testing)
 
-### Installation
+## Prerequisites
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd express-api
-   ```
+- Node.js 16.x
+- MySQL 8.0
+- Docker and Docker Compose (optional)
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+## Installation and execution
+- Clone the repository
+- Run npm install
+- Run npm run docker (the scripts will run everything else).
 
-### Running the Application
-
-To run the application locally, use the following command:
-```
-npm start
-```
-
-### Running with Docker
-
-To run the application using Docker, navigate to the `docker` directory and use:
-```
-docker-compose up
-```
-
-### Testing
-
-To run the tests, use:
-```
-npm test
-```
-
-## Environment Variables
-
-Create a `.env` file in the root directory and add your environment variables, such as database connection details.
-
-## License
-
-This project is licensed under the MIT License.
+## Database information if you need it for any reasons:
+- DB_USER=root
+- DB_PASSWORD=password
+- DB_NAME=CheckoutDatabase
+- DB_HOST=localhost
+- DB_PORT=3306
