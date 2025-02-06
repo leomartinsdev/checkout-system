@@ -5,12 +5,13 @@ services:
     build: .
     container_name: checkout_api
     user: node
-    command: npm run go
+    command: npm run dev:docker
     restart: always
     volumes:
       - ./:/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - 3001:3001
     environment:
@@ -24,10 +25,12 @@ services:
     image: mysql:8.0.32
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-ppassword"]
+      interval: 5s
       timeout: 10s
       retries: 5
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: CheckoutDatabase

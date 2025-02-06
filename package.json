@@ -4,9 +4,11 @@
   "description": "A Checkout System API built with Node.js",
   "main": "src/app.ts",
   "scripts": {
+    "dev": "nodemon -L --exec 'ts-node' src/server.ts",
     "db:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "build": "tsc --project tsconfig.json",
     "prestart": "npm run build && npm run db:reset",
+    "dev:docker": "npm run db:reset && npm run dev",
     "start": "node ./build/server.js ",
     "go": "npm run prestart && npm run start",
     "docker:up": "docker-compose up -d --build",
@@ -22,15 +24,16 @@
     "sequelize": "^6.25.5"
   },
   "devDependencies": {
-    "typescript": "^4.1.2",
-    "ts-node": "^9.1.1",
-    "ts-node-dev": "^1.1.8",
-    "nodemon": "^2.0.4",
-    "sequelize-cli": "^6.3.0",
-    "jest": "^26.6.3",
+    "@types/express": "^4.17.8",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.14.31",
-    "@types/express": "^4.17.8",
-    "@types/sequelize": "^4.28.10"
+    "@types/sequelize": "^4.28.10",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.3.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.9.5",
+    "tsconfig-paths": "^4.2.0"
   }
 }

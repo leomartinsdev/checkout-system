@@ -8,10 +8,17 @@ export default class CheckoutController {
 
   public async productsCheckout(req: Request, res: Response): Promise<void> {
     try {
-      const serviceResponse = await this.checkoutService.findAll();
+      const { items } = req.body;
+      const serviceResponse = await this.checkoutService.checkTotalPrice(items);
       res.status(serviceResponse.status).json(serviceResponse.data);
     } catch (error: any) {
       res.status(400).json({ error: error.message });
     }
+  }
+
+  public async findAll(req: Request, res: Response): Promise<void> {
+    const serviceResponse = await this.checkoutService.findAll();
+
+    res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }
