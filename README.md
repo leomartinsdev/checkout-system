@@ -27,10 +27,10 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 
 | Product Name      | SKU    | Price (USD) |
 |------------------|--------|-------------|
-| MacBook Pro      | 43N23P | 1399.99    |
+| MacBook Pro      | 43N23P | 5399.99    |
 | Google Home      | 120P90 | 49.99      |
 | Alexa Speaker    | A304SD | 109.50     |
-| Raspberry Pi B   | 234234 | 30.00      |
+| Raspberry Pi B   | 344222 | 30.00      |
 
 
 ## Prerequisites
