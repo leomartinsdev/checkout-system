@@ -31,8 +31,8 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 
 ## Installation and execution
 - Clone the repository
-- Run npm install
-- Run npm run docker (the scripts will run everything else).
+- Run: npm install
+- Run: npm run docker (the scripts will run everything else).
 
 ## Database information if you need it for any reasons:
 - DB_USER=root
@@ -40,3 +40,18 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 - DB_NAME=CheckoutDatabase
 - DB_HOST=localhost
 - DB_PORT=3306
+
+
+## API Documentation
+
+### Checkout Endpoint
+
+#### `POST /checkout`
+Calculate total price for items with applicable discounts.
+Example: http://localhost:3001/checkout
+
+**Request Body:**
+```json
+{
+  "items": ["120P90", "43N23P", "A304SD"]
+}
