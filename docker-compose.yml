@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  checkout-api:
+    build: .
+    container_name: checkout_api
+    user: node
+    command: npm run go
+    restart: always
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - 3001:3001
+    environment:
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: CheckoutDatabase
+  db:
+    container_name: checkout_db
+    image: mysql:8.0.32
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
