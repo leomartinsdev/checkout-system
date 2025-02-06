@@ -23,6 +23,16 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 - Docker
 - Jest (Testing)
 
+## Available Products
+
+| Product Name      | SKU    | Price (USD) |
+|------------------|--------|-------------|
+| MacBook Pro      | 43N23P | 1399.99    |
+| Google Home      | 120P90 | 49.99      |
+| Alexa Speaker    | A304SD | 109.50     |
+| Raspberry Pi B   | 234234 | 30.00      |
+
+
 ## Prerequisites
 
 - Node.js 16.x
@@ -33,6 +43,8 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 - Clone the repository
 - Run: npm install
 - Run: npm run docker (the scripts will run everything else).
+
+- To actually use the API you can send requests using Postman or Insomnia to http://localhost:3001/checkout
 
 ## Database information if you need it for any reasons:
 - DB_USER=root
@@ -48,7 +60,6 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 
 #### `POST /checkout`
 Calculate total price for items with applicable discounts. You can send the SKUs or the name of the products.
-Example: http://localhost:3001/checkout
 
 **Request Body:**
 ```json
