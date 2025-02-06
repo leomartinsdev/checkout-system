@@ -5,7 +5,7 @@ services:
     build: .
     container_name: checkout_api
     user: node
-    command: npm run dev:docker
+    command: npm run go
     restart: always
     volumes:
       - ./:/app
