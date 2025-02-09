@@ -2,6 +2,8 @@
 
 A Node.js/Express API that implements a checkout system with special pricing rules and product management.
 
+PS: In the challenge requirements file, it was stated that the promotions on Alexa Speakers should be applied if the user scanned MORE than 3 Alexa Speakers, but on the example given the discount was already applied when the user scanned 3 (and not more than 3) of them. I decided to follow with what was stated in the text and apply the promotion if the number of Alexa Speakers scanned were higher than 3.
+
 ## Features
 
 - Product management with MySQL database
