@@ -54,9 +54,9 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 - DB_PORT=3306
 
 ## Tests
-- npm run test": run all tests.
-  npm run test:unit": run unit tests.
-  npm run test:integration": run integration tests.
+- Run all tests: npm run test
+- Run unit tests: npm run test:unit
+- Run integration tests: npm run test:integration
 
 
 ## API Documentation
