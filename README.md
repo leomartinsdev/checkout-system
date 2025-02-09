@@ -42,7 +42,7 @@ A Node.js/Express API that implements a checkout system with special pricing rul
 ## Installation and execution
 - Clone the repository
 - Run: npm install
-- Run: npm run docker (the scripts will run everything else). The scripts will take 5-10 seconds to run and then the API will be available for requests.
+- Run: npm run docker (the scripts will run everything else). The scripts will take 5-10 seconds to run and then the API will be available for requests. You can check the Docker API Container logs with the command: docker logs checkout_api -f
 
 - To actually use the API you can send requests using Postman or Insomnia to http://localhost:3001/checkout
 
