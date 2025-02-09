@@ -21,15 +21,10 @@ export default class CheckoutModel implements ICheckoutModel {
     const product = this.model.findOne({
       where: {
         name: {
-          [Op.like]: name, // case insensitive
+          [Op.like]: name,
         },
       },
     });
     return product;
-  }
-
-  public async findAll(): Promise<IProduct[]> {
-    const products = this.model.findAll();
-    return products;
   }
 }

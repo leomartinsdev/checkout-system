@@ -12,19 +12,6 @@ interface GroupedProduct {
 export default class CheckoutService {
   constructor(private checkoutModel: ICheckoutModel = new CheckoutModel()) {}
 
-  public async findAll(): Promise<any> {
-    try {
-      const products = await this.checkoutModel.findAll();
-
-      return {
-        status: 200,
-        data: products,
-      };
-    } catch (error) {
-      throw error;
-    }
-  }
-
   public async checkTotalPrice(items: string[]): Promise<any> {
     try {
       const foundProducts: IProduct[] = [];

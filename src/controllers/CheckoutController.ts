@@ -15,10 +15,4 @@ export default class CheckoutController {
       res.status(400).json({ error: error.message });
     }
   }
-
-  public async findAll(req: Request, res: Response): Promise<void> {
-    const serviceResponse = await this.checkoutService.findAll();
-
-    res.status(serviceResponse.status).json(serviceResponse.data);
-  }
 }

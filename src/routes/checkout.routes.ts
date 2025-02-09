@@ -14,8 +14,4 @@ router.post(
   }
 );
 
-router.get('/', async (req: Request, res: Response) => {
-  return checkoutController.findAll(req, res);
-});
-
 export default router;

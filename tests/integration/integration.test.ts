@@ -63,14 +63,4 @@ describe('Checkout API Integration Tests', () => {
       expect(response.body).to.have.property('error');
     });
   });
-
-  describe('GET /checkout', () => {
-    it('should return all products', async () => {
-      const response = await chai.request(app).get('/checkout');
-
-      expect(response).to.have.status(200);
-      expect(response.body).to.be.an('array');
-      expect(response.body.length).to.be.greaterThan(0);
-    });
-  });
 });
