@@ -35,7 +35,10 @@ export default class CheckoutService {
           (await this.checkoutModel.getByName(item));
 
         if (!product) {
-          throw new Error(`Product not found: ${item}`);
+          return {
+            status: 404,
+            data: `Product not found ${item}`,
+          };
         }
 
         foundProducts.push(product);
@@ -55,7 +58,7 @@ export default class CheckoutService {
     }
   }
 
-  private calculateTotal(products: IProduct[]): number {
+  public calculateTotal(products: IProduct[]): number {
     const grouped: GroupedProduct[] = Object.values(
       products.reduce((acc, product) => {
         if (!acc[product.sku]) {
